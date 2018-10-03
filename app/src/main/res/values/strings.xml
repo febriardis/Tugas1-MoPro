@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Intens</string>
+    <string-array name="menu_array">
+        <item>Bubur Ayam</item>
+        <item>Mie Ayam</item>
+        <item>Gorengan</item>
+        <item>Nasi Kuning</item>
+        <item>Nasi Goreng</item>
+        <item>Gado-gado</item>
+        <item>Es Teh Manis</item>
+        <item>Es Jeruk</item>
+        <item>Es Lilin</item>
+    </string-array>
+</resources>
