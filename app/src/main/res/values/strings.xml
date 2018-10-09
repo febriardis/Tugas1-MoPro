@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Intens</string>
+    <string name="app_name">Warungku</string>
+    <string name="opt_menu1">Home</string>
+    <string name="opt_menu2">Kontak</string>
     <string-array name="menu_array">
         <item>Bubur Ayam</item>
         <item>Mie Ayam</item>
@@ -7,7 +9,6 @@
         <item>Nasi Kuning</item>
         <item>Nasi Goreng</item>
         <item>Gado-gado</item>
-        <item>Es Teh Manis</item>
         <item>Es Jeruk</item>
         <item>Es Lilin</item>
     </string-array>
