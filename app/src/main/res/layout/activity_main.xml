@@ -18,52 +18,43 @@
         app:strokeColor="#FF777777"
         app:strokeWidth="1dp"/>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@color/colorGrey"
-        android:layout_margin="15dp"
-        android:padding="30dp">
-
-        <TextView
-            android:id="@+id/text_nmwarung"
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp">
+        <RelativeLayout
+            android:id="@+id/btn_menu"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="Warung Kang Idoy"
-            android:textSize="20dp"/>
-
-        <LinearLayout
-            android:id="@+id/text_lok"
-            android:layout_below="@id/text_nmwarung"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:layout_marginLeft="45dp">
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/icon_loc"/>
+                android:id="@+id/icon_list"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_list"/>
             <TextView
+                android:layout_below="@id/icon_list"
+                android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cibiru"/>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_listmenu"
-            android:layout_width="wrap_content"
+                android:text="Menu"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/btn_kontak"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:text="List Menu"/>
-        <Button
-            android:id="@+id/btn_contact"
-            android:layout_alignRight="@id/btn_listmenu"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Contact"/>
-    </RelativeLayout>
+            android:layout_marginLeft="45dp">
+            <ImageView
+                android:id="@+id/icon_contact"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_contact"/>
+            <TextView
+                android:layout_below="@id/icon_contact"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contact"/>
+        </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

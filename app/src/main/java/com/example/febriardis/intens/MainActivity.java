@@ -8,13 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.synnapps.carouselview.CarouselView;
 import com.synnapps.carouselview.ImageListener;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnList;
-    Button btnContact;
+    RelativeLayout menu;
+    RelativeLayout kontak;
     CarouselView carouselView;
     int[] sampleImages = {R.drawable.gambarwr1, R.drawable.gambarwr2};
 
@@ -27,10 +29,18 @@ public class MainActivity extends AppCompatActivity {
         carouselView.setPageCount(sampleImages.length);
         carouselView.setImageListener(imageListener);
 
-        btnContact = (Button) findViewById(R.id.btn_contact);
-        btnList = (Button) findViewById(R.id.btn_listmenu);
+        menu = findViewById(R.id.btn_menu);
+        kontak = findViewById(R.id.btn_kontak);
 
-        btnContact.setOnClickListener(new View.OnClickListener() {
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ListActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        kontak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ContactActivity.class);
@@ -38,13 +48,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     ImageListener imageListener = new ImageListener() {
