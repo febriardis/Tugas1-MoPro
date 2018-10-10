@@ -9,7 +9,9 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
     private Context mCtx;
@@ -30,9 +32,12 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder productViewHolder, final int i) {
+        Locale localeID = new Locale("in", "ID");
+        NumberFormat formatRupiah = NumberFormat.getCurrencyInstance(localeID);
+
         Product product = productList.get(i);
         productViewHolder.txtNmMenu.setText(product.getNm_menu());
-        productViewHolder.txtHarga.setText(String.valueOf(product.getHarga()));
+        productViewHolder.txtHarga.setText(formatRupiah.format((double)product.getHarga()));
         productViewHolder.checkBox.setChecked(product.getSelected());
         productViewHolder.checkBox.setTag(product);
         productViewHolder.checkBox.setOnClickListener(new View.OnClickListener() {
