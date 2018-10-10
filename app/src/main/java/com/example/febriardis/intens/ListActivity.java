@@ -1,58 +1,119 @@
 package com.example.febriardis.intens;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ListActivity extends AppCompatActivity  {
 
-    RecyclerView recyclerView;
+    Button btnBeli;
+
+    RecyclerView recyclerView1;
+    RecyclerView recyclerView2;
     ProductAdapter adapter;
 
-    List<Product> productList;
+    List<Product> productList1;
+    List<Product> productList2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        recyclerView = findViewById(R.id.rv_makanan);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        btnBeli = findViewById(R.id.btn_beli);
+        btnBeli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogOrder();
+            }
+        });
 
-        productList = new ArrayList<>();
+        recyclerView1 = findViewById(R.id.rv_makanan);
+        recyclerView1.setHasFixedSize(true);
+        recyclerView1.setLayoutManager(new LinearLayoutManager(this));
 
-        productList.add(
+        productList1 = new ArrayList<>();
+
+        productList1.add(
           new Product(
                   "Mie Ayam Idoy",
                   10000
           )
         );
 
-        productList.add(
+        productList1.add(
                 new Product(
                         "Mie Goreng Suha",
                         8000
                 )
         );
 
-
-        productList.add(
+        productList1.add(
                 new Product(
                         "Nasi Goreng Akum",
                         12000
                 )
         );
 
-        adapter = new ProductAdapter(this, productList);
-        recyclerView.setAdapter(adapter);
+        adapter = new ProductAdapter(this, productList1);
+        recyclerView1.setAdapter(adapter);
+
+
+        recyclerView2 = findViewById(R.id.rv_minuman);
+        recyclerView2.setHasFixedSize(true);
+        recyclerView2.setLayoutManager(new LinearLayoutManager(this));
+
+        productList2 = new ArrayList<>();
+
+        productList2.add(
+                new Product(
+                        "Teh Manis Hangat/Dingin",
+                        5000
+                )
+        );
+
+        productList2.add(
+                new Product(
+                        "Teh Tarik",
+                        6000
+                )
+        );
+
+        productList2.add(
+                new Product(
+                        "Kopi Susu",
+                        5000
+                )
+        );
+
+        adapter = new ProductAdapter(this, productList2);
+        recyclerView2.setAdapter(adapter);
+    }
+
+    private void DialogOrder(){
+        new android.app.AlertDialog.Builder(this)
+                .setTitle("Pesanan akan segera diproses")
+                .setMessage("Terima kasih sudah memesan")
+                .setPositiveButton("Oke", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent i = new Intent(ListActivity.this, MainActivity.class);
+                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(i);
+                    }
+                })
+                .show();
     }
 
     @Override
