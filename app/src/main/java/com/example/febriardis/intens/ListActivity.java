@@ -66,6 +66,20 @@ public class ListActivity extends AppCompatActivity  {
                 )
         );
 
+        productList1.add(
+                new Product(
+                        "Nasi Pecel Lele",
+                        15000
+                )
+        );
+
+        productList1.add(
+                new Product(
+                        "Nasi Kuning",
+                        12000
+                )
+        );
+
         adapter = new ProductAdapter(this, productList1);
         recyclerView1.setAdapter(adapter);
 
@@ -93,6 +107,20 @@ public class ListActivity extends AppCompatActivity  {
         productList2.add(
                 new Product(
                         "Kopi Susu",
+                        5000
+                )
+        );
+
+        productList2.add(
+                new Product(
+                        "Bandrek",
+                        5000
+                )
+        );
+
+        productList2.add(
+                new Product(
+                        "Bajigur",
                         5000
                 )
         );

@@ -44,5 +44,5 @@
         android:padding="10dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:text="Versi 1.0"/>
+        android:text="Versi Beta 0.1"/>
 </RelativeLayout>
